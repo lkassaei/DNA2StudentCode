@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * DNA
  * <p>
@@ -11,12 +13,41 @@
  */
 
 public class DNA {
-
     /**
      * TODO: Complete this function, STRCount(), to return longest consecutive run of STR in sequence.
      */
     public static int STRCount(String sequence, String STR) {
+        int sequenceLength = sequence.length();
+        int STRLength = STR.length();
 
-        return 0;
+        if (!sequence.contains(STR)) {
+            return 0;
+        }
+
+        ArrayList<Integer> arr = new ArrayList<>();
+
+
+        for (int start = 0; start <  sequenceLength - STRLength; start++) {
+            int count = 0;
+            boolean reset = false;
+            for (int i = start; i < sequenceLength; i+=STRLength) {
+                if (!reset && i + STRLength < sequenceLength && sequence.substring(i, i + STRLength).equals(STR)) {
+                    count++;
+                }
+                else {
+                    reset = true;
+                }
+            }
+            arr.add(count);
+        }
+
+
+        int biggest = arr.get(0);
+        for (int i = 0; i < arr.size(); i++) {
+            if (arr.get(i) > biggest) {
+                biggest = arr.get(i);
+            }
+        }
+        return biggest;
     }
 }
