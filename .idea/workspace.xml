@@ -50,7 +50,7 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.DNATest.testTricky">
+  <component name="RunManager" selected="JUnit.DNATest">
     <configuration name="DNATest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DNA 2.0 Student Code" />
       <option name="PACKAGE_NAME" value="" />
@@ -72,8 +72,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DNATest.testTricky" />
         <item itemvalue="JUnit.DNATest" />
+        <item itemvalue="JUnit.DNATest.testTricky" />
       </list>
     </recent_temporary>
   </component>

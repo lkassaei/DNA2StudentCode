@@ -53,8 +53,9 @@ public class DNA {
 
     public static int calculateNumber(String str) {
         int count = 0;
-        for (char c : str.toCharArray()) {
-            count += c;
+        int strlen = str.length();
+        for (int i = 0; i < strlen; i++) {
+            count += str.charAt(i) * (10^i);
         }
         return count;
     }
