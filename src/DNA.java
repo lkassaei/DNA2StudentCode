@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * at Menlo School in Atherton, CA
  *</p>
  * <p>
- * Completed by: [YOUR NAME HERE]
+ * Completed by: Lily Kassaei
  *</p>
  */
 
