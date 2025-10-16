@@ -25,13 +25,13 @@ public class DNA {
         }
 
         ArrayList<Integer> arr = new ArrayList<>();
-
+        int STRnum = calculateNumber(STR);
 
         for (int start = 0; start <  sequenceLength - STRLength; start++) {
             int count = 0;
             boolean reset = false;
             for (int i = start; i < sequenceLength; i+=STRLength) {
-                if (!reset && i + STRLength < sequenceLength && sequence.substring(i, i + STRLength).equals(STR)) {
+                if (!reset && i + STRLength < sequenceLength && calculateNumber(sequence.substring(i, i + STRLength)) == STRnum) {
                     count++;
                 }
                 else {
@@ -49,5 +49,13 @@ public class DNA {
             }
         }
         return biggest;
+    }
+
+    public static int calculateNumber(String str) {
+        int count = 0;
+        for (char c : str.toCharArray()) {
+            count += c;
+        }
+        return count;
     }
 }
