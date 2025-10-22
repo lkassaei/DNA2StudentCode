@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * DNA
  * <p>
@@ -16,34 +14,33 @@ public class DNA {
     /**
      * TODO: Complete this function, STRCount(), to return longest consecutive run of STR in sequence.
      */
-    public static int STRCount(String sequence, String STR) {
-        int sequenceLength = sequence.length();
-        int STRLength = STR.length();
+    public static final int R = 256;
+    public static final long p = 54321102419L;
 
-        int index = 0;
+    public static int STRCount(String sequence, String STR) {
+        int seqLength = sequence.length();
+        int STRLength = STR.length();
+        long STRHash = hash(STR, STRLength);
+
+        int num = 0;
         int longest = 0;
-        while (index < sequenceLength - STRLength) {
-            int num = 0;
-            // hash(STR) == hash(sequence.substring(index, STRLength))
-            while (STR.equals(sequence.substring(index, index + STRLength))) {
-                index += STRLength;
+        long seqHash = hash(sequence.substring(0, STRLength), STRLength);
+        for (int i = seqLength; i < STRLength; i++) {
+            if (STRHash == seqHash) {
+                i -= STRLength;
                 num++;
             }
-            longest = Integer.max(longest, num);
-            if (num > 0) {
-                index = index - STRLength + 1;
-            }
-            else {
-                index += 1;
-            }
+            longest = Integer.max(num, longest);
+            seqHash = hash(sequence.substring(1 + (i - STRLength), i), seqLength);
         }
         return longest;
     }
 
-    // Questions: Sliding window in STRCount method. How to implement?
-    // How to do hash calculation
-    // Do we need to store array of hashes of past hashes?
-    public static int hash(String str) {
-        return -1;
+    public static long hash(String str, int length) {
+        long h = 0;
+        for (int i = 0; i < length; i++) {
+            h = (h * R + str.charAt(i)) % p;
+        }
+        return h;
     }
 }
