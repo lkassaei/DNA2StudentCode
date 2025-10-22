@@ -20,43 +20,30 @@ public class DNA {
         int sequenceLength = sequence.length();
         int STRLength = STR.length();
 
-        if (!sequence.contains(STR)) {
-            return 0;
-        }
-
-        ArrayList<Integer> arr = new ArrayList<>();
-        int STRnum = calculateNumber(STR);
-
-        for (int start = 0; start <  sequenceLength - STRLength; start++) {
-            int count = 0;
-            boolean reset = false;
-            for (int i = start; i < sequenceLength; i+=STRLength) {
-                if (!reset && i + STRLength < sequenceLength && calculateNumber(sequence.substring(i, i + STRLength)) == STRnum) {
-                    count++;
-                }
-                else {
-                    reset = true;
-                }
+        int index = 0;
+        int longest = 0;
+        while (index < sequenceLength - STRLength) {
+            int num = 0;
+            // hash(STR) == hash(sequence.substring(index, STRLength))
+            while (STR.equals(sequence.substring(index, index + STRLength))) {
+                index += STRLength;
+                num++;
             }
-            arr.add(count);
-        }
-
-
-        int biggest = arr.get(0);
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) > biggest) {
-                biggest = arr.get(i);
+            longest = Integer.max(longest, num);
+            if (num > 0) {
+                index = index - STRLength + 1;
+            }
+            else {
+                index += 1;
             }
         }
-        return biggest;
+        return longest;
     }
 
-    public static int calculateNumber(String str) {
-        int count = 0;
-        int strlen = str.length();
-        for (int i = 0; i < strlen; i++) {
-            count += str.charAt(i) * (10^i);
-        }
-        return count;
+    // Questions: Sliding window in STRCount method. How to implement?
+    // How to do hash calculation
+    // Do we need to store array of hashes of past hashes?
+    public static int hash(String str) {
+        return -1;
     }
 }

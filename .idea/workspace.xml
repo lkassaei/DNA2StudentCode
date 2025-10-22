@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d822f69-9e3c-4e2b-8ee1-11779bb646bd" name="Changes" comment="added str comparison method" />
+    <list default="true" id="6d822f69-9e3c-4e2b-8ee1-11779bb646bd" name="Changes" comment="added str comparison method correctly plus worklog">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DNA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DNA.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +121,47 @@
       <option name="project" value="LOCAL" />
       <updated>1760647450100</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added str comparison method">
+      <option name="closed" value="true" />
+      <created>1760647884341</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1760647884341</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added str comparison method correctly">
+      <option name="closed" value="true" />
+      <created>1760648038937</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1760648038938</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added str comparison method correctly plus worklog">
+      <option name="closed" value="true" />
+      <created>1760648119697</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1760648119697</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added str comparison method correctly plus worklog">
+      <option name="closed" value="true" />
+      <created>1760648145202</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1760648145202</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added str comparison method correctly plus worklog">
+      <option name="closed" value="true" />
+      <created>1760648188159</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1760648188159</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +179,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="v1" />
     <MESSAGE value="added str comparison method" />
-    <option name="LAST_COMMIT_MESSAGE" value="added str comparison method" />
+    <MESSAGE value="added str comparison method correctly" />
+    <MESSAGE value="added str comparison method correctly plus worklog" />
+    <option name="LAST_COMMIT_MESSAGE" value="added str comparison method correctly plus worklog" />
   </component>
 </project>
