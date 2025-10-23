@@ -25,15 +25,24 @@ public class DNA {
         int num = 0;
         int longest = 0;
         long seqHash = hash(sequence.substring(0, STRLength), STRLength);
-        for (int i = seqLength; i < STRLength; i++) {
+        int i = 0;
+
+        while (i <= seqLength - STRLength) {
             if (STRHash == seqHash) {
-                i -= STRLength;
+                i += STRLength;
                 num++;
+
             }
-            longest = Integer.max(num, longest);
-            seqHash = hash(sequence.substring(1 + (i - STRLength), i), seqLength);
+            else {
+                longest = Math.max(num, longest);
+                num = 0;
+                i++;
+            }
+            if (i < seqLength - STRLength) {
+                seqHash = hash(sequence.substring(i, i + STRLength), STRLength);
+            }
         }
-        return longest;
+        return Integer.max(longest, num);
     }
 
     public static long hash(String str, int length) {
